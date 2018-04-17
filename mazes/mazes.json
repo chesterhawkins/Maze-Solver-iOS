@@ -1,0 +1,65 @@
+{
+    "list": [
+	{
+	    "contributor": "chesterhawkins",
+            "description": "Happy Circle",
+	    "shape": "Circular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/happy_circle.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Simple square maze",
+	    "shape": "Rectangular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/simple_square.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Circle maze",
+	    "shape": "Circular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/circle.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Complex square maze",
+	    "shape": "Rectangular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/complex_square.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Boring square",
+	    "shape": "Rectangular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/boring_square.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Boring rectangle with triangle cells",
+	    "shape": "Rectangular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/boring_rectangle_with_triangle_cells.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Mini triangle",
+	    "shape": "Triangular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/mini_triangle.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Try! Angle",
+	    "shape": "Triangular",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/try_angle.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Mini hex",
+	    "shape": "Hexagonal",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/mini_hex.png"
+        },
+        {
+	    "contributor": "chesterhawkins",
+            "description": "Hexagonal with triangle cells",
+	    "shape": "Hexagonal",
+            "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/hex_with_triangle_cells.png"
+        }
+    ]
+}
+

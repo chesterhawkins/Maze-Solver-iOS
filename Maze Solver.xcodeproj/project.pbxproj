@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		766F13E0135AF5511BE21AD1 /* Pods_Maze_Solver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54539BB7D64187646B21522 /* Pods_Maze_Solver.framework */; };
+		A423B104206DF524002D9EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B103206DF524002D9EA4 /* AppDelegate.swift */; };
+		A423B106206DF524002D9EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B105206DF524002D9EA4 /* ViewController.swift */; };
+		A423B109206DF524002D9EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A423B107206DF524002D9EA4 /* Main.storyboard */; };
+		A423B10B206DF524002D9EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A423B10A206DF524002D9EA4 /* Assets.xcassets */; };
+		A423B10E206DF524002D9EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A423B10C206DF524002D9EA4 /* LaunchScreen.storyboard */; };
+		A423B116206DF535002D9EA4 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B115206DF535002D9EA4 /* Maze.swift */; };
+		A423B118206DFB5B002D9EA4 /* MazeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B117206DFB5B002D9EA4 /* MazeCell.swift */; };
+		A423B11B206F43B9002D9EA4 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B11A206F43B9002D9EA4 /* Array2D.swift */; };
+		A423B11E206F470E002D9EA4 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B11C206F470E002D9EA4 /* LinkedList.swift */; };
+		A423B11F206F470E002D9EA4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B11D206F470E002D9EA4 /* Queue.swift */; };
+		A423B123206F6AED002D9EA4 /* SolvedMazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B122206F6AED002D9EA4 /* SolvedMazeViewController.swift */; };
+		A459089F2085D34400FABB03 /* happy_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A459089E2085D34300FABB03 /* happy_circle.png */; };
+		A4D1E1C92081AE7C00853BB1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1E1C82081AE7C00853BB1 /* Helper.swift */; };
+		A4D1E1CB2081AEC800853BB1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1E1CA2081AEC800853BB1 /* Globals.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A423B100206DF524002D9EA4 /* Maze Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maze Solver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A423B103206DF524002D9EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A423B105206DF524002D9EA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A423B108206DF524002D9EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A423B10A206DF524002D9EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A423B10D206DF524002D9EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A423B10F206DF524002D9EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A423B115206DF535002D9EA4 /* Maze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		A423B117206DFB5B002D9EA4 /* MazeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeCell.swift; sourceTree = "<group>"; };
+		A423B11A206F43B9002D9EA4 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		A423B11C206F470E002D9EA4 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		A423B11D206F470E002D9EA4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		A423B122206F6AED002D9EA4 /* SolvedMazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedMazeViewController.swift; sourceTree = "<group>"; };
+		A459089E2085D34300FABB03 /* happy_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy_circle.png; sourceTree = "<group>"; };
+		A4D1E1C82081AE7C00853BB1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		A4D1E1CA2081AEC800853BB1 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		B11612A0CE8EA5FD71DB0BA2 /* Pods-Maze Solver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze Solver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Maze Solver/Pods-Maze Solver.release.xcconfig"; sourceTree = "<group>"; };
+		BEE85C07401880EC5B36DAC1 /* Pods-Maze Solver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze Solver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maze Solver/Pods-Maze Solver.debug.xcconfig"; sourceTree = "<group>"; };
+		D54539BB7D64187646B21522 /* Pods_Maze_Solver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maze_Solver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A423B0FD206DF524002D9EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				766F13E0135AF5511BE21AD1 /* Pods_Maze_Solver.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		073DB11BB47BFA7CAF1DDE37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEE85C07401880EC5B36DAC1 /* Pods-Maze Solver.debug.xcconfig */,
+				B11612A0CE8EA5FD71DB0BA2 /* Pods-Maze Solver.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0AA75B1C7FC3119B3899D05B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D54539BB7D64187646B21522 /* Pods_Maze_Solver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A423B0F7206DF524002D9EA4 = {
+			isa = PBXGroup;
+			children = (
+				A423B102206DF524002D9EA4 /* Maze Solver */,
+				A423B101206DF524002D9EA4 /* Products */,
+				073DB11BB47BFA7CAF1DDE37 /* Pods */,
+				0AA75B1C7FC3119B3899D05B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A423B101206DF524002D9EA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A423B100206DF524002D9EA4 /* Maze Solver.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A423B102206DF524002D9EA4 /* Maze Solver */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1E1C72081AE4700853BB1 /* Utils */,
+				A423B119206F439D002D9EA4 /* Model */,
+				A423B121206F6ACF002D9EA4 /* ViewControllers */,
+				A4D1E1C62081AE3E00853BB1 /* View */,
+				A423B103206DF524002D9EA4 /* AppDelegate.swift */,
+				A423B107206DF524002D9EA4 /* Main.storyboard */,
+				A423B10A206DF524002D9EA4 /* Assets.xcassets */,
+				A423B10C206DF524002D9EA4 /* LaunchScreen.storyboard */,
+				A423B10F206DF524002D9EA4 /* Info.plist */,
+				A459089E2085D34300FABB03 /* happy_circle.png */,
+			);
+			path = "Maze Solver";
+			sourceTree = "<group>";
+		};
+		A423B119206F439D002D9EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A423B115206DF535002D9EA4 /* Maze.swift */,
+				A423B11A206F43B9002D9EA4 /* Array2D.swift */,
+				A423B120206F4712002D9EA4 /* Queue */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A423B120206F4712002D9EA4 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				A423B11C206F470E002D9EA4 /* LinkedList.swift */,
+				A423B11D206F470E002D9EA4 /* Queue.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		A423B121206F6ACF002D9EA4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A423B105206DF524002D9EA4 /* ViewController.swift */,
+				A423B122206F6AED002D9EA4 /* SolvedMazeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A4D1E1C62081AE3E00853BB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A423B117206DFB5B002D9EA4 /* MazeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4D1E1C72081AE4700853BB1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1E1C82081AE7C00853BB1 /* Helper.swift */,
+				A4D1E1CA2081AEC800853BB1 /* Globals.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A423B0FF206DF524002D9EA4 /* Maze Solver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A423B112206DF524002D9EA4 /* Build configuration list for PBXNativeTarget "Maze Solver" */;
+			buildPhases = (
+				6C7CE071A2A100DCD273E901 /* [CP] Check Pods Manifest.lock */,
+				A423B0FC206DF524002D9EA4 /* Sources */,
+				A423B0FD206DF524002D9EA4 /* Frameworks */,
+				A423B0FE206DF524002D9EA4 /* Resources */,
+				5124C01AF198CEF2159340C2 /* [CP] Embed Pods Frameworks */,
+				57907DB7E9721856642814C8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Maze Solver";
+			productName = "Maze Solver";
+			productReference = A423B100206DF524002D9EA4 /* Maze Solver.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A423B0F8206DF524002D9EA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Ojee Labs";
+				TargetAttributes = {
+					A423B0FF206DF524002D9EA4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A423B0FB206DF524002D9EA4 /* Build configuration list for PBXProject "Maze Solver" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A423B0F7206DF524002D9EA4;
+			productRefGroup = A423B101206DF524002D9EA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A423B0FF206DF524002D9EA4 /* Maze Solver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A423B0FE206DF524002D9EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A423B10E206DF524002D9EA4 /* LaunchScreen.storyboard in Resources */,
+				A423B10B206DF524002D9EA4 /* Assets.xcassets in Resources */,
+				A423B109206DF524002D9EA4 /* Main.storyboard in Resources */,
+				A459089F2085D34400FABB03 /* happy_circle.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5124C01AF198CEF2159340C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Maze Solver/Pods-Maze Solver-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Maze Solver/Pods-Maze Solver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57907DB7E9721856642814C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Maze Solver/Pods-Maze Solver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C7CE071A2A100DCD273E901 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Maze Solver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A423B0FC206DF524002D9EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A423B11E206F470E002D9EA4 /* LinkedList.swift in Sources */,
+				A423B11F206F470E002D9EA4 /* Queue.swift in Sources */,
+				A423B123206F6AED002D9EA4 /* SolvedMazeViewController.swift in Sources */,
+				A423B106206DF524002D9EA4 /* ViewController.swift in Sources */,
+				A423B104206DF524002D9EA4 /* AppDelegate.swift in Sources */,
+				A4D1E1C92081AE7C00853BB1 /* Helper.swift in Sources */,
+				A423B118206DFB5B002D9EA4 /* MazeCell.swift in Sources */,
+				A423B116206DF535002D9EA4 /* Maze.swift in Sources */,
+				A4D1E1CB2081AEC800853BB1 /* Globals.swift in Sources */,
+				A423B11B206F43B9002D9EA4 /* Array2D.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A423B107206DF524002D9EA4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A423B108206DF524002D9EA4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A423B10C206DF524002D9EA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A423B10D206DF524002D9EA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A423B110206DF524002D9EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A423B111206DF524002D9EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A423B113206DF524002D9EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE85C07401880EC5B36DAC1 /* Pods-Maze Solver.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UWVU256E3N;
+				INFOPLIST_FILE = "Maze Solver/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojeelabs.mazesolver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A423B114206DF524002D9EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B11612A0CE8EA5FD71DB0BA2 /* Pods-Maze Solver.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UWVU256E3N;
+				INFOPLIST_FILE = "Maze Solver/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojeelabs.mazesolver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A423B0FB206DF524002D9EA4 /* Build configuration list for PBXProject "Maze Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A423B110206DF524002D9EA4 /* Debug */,
+				A423B111206DF524002D9EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A423B112206DF524002D9EA4 /* Build configuration list for PBXNativeTarget "Maze Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A423B113206DF524002D9EA4 /* Debug */,
+				A423B114206DF524002D9EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A423B0F8206DF524002D9EA4 /* Project object */;
+}
