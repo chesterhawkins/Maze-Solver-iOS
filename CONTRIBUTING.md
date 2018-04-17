@@ -11,7 +11,7 @@ You must adhere to the following format:
 {
     "contributor": "<github_username>",
     "description": "<description>",
-	"shape": "<Circular|Rectangular|Triangular|Hexagonal",
+    "shape": "<Circular|Rectangular|Triangular|Hexagonal",
     "url": "https://ojeelabs.nyc3.digitaloceanspaces.com/<image_name>"
 }
 ```
