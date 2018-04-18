@@ -24,9 +24,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-T5-r1D">
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-T5-r1D">
                                     <rect key="frame" x="127" y="8" width="121" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="121" id="4yB-Rl-X7t"/>
+                                    </constraints>
                                     <segments>
                                         <segment title="" image="rectangle"/>
                                         <segment title="" image="circle"/>
@@ -39,6 +41,10 @@
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="GGz-T5-r1D" firstAttribute="centerY" secondItem="BZD-YM-321" secondAttribute="centerY" id="elz-sf-T4b"/>
+                                <constraint firstItem="GGz-T5-r1D" firstAttribute="centerX" secondItem="BZD-YM-321" secondAttribute="centerX" id="y0w-Lf-eX9"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="maze" rowHeight="132" id="V7C-SU-O8T" customClass="MazeCell" customModule="Maze_Solver" customModuleProvider="target">
