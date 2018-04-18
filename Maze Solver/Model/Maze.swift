@@ -132,8 +132,8 @@ class Maze {
                 let pixel = path.last
                 
                 for adjacent in self.getAdjacentPixel(pixelLoc: pixel!) {
-                    if self.pixelIsWhite(pixelLoc: adjacent) {
-                        self.setPixelToOffWhite(pixelLoc: adjacent)
+                    if self.pixelIsPath(pixelLoc: adjacent) {
+                        self.markPixelAsVisited(pixelLoc: adjacent)
                         var newPath = path
                         newPath.append(adjacent)
                         queue.enqueue(newPath)
@@ -165,7 +165,7 @@ class Maze {
             self.setPixelToGreen(pixelLoc: position)
             //Thicken path drawing if possible
             for adjacent in self.getAdjacentPixel(pixelLoc: position) {
-                if pixelIsOffWhite(pixelLoc: adjacent) || pixelIsWhite(pixelLoc: adjacent) {
+                if pixelWasVisited(pixelLoc: adjacent) || pixelIsPath(pixelLoc: adjacent) {
                     self.setPixelToGreen(pixelLoc: adjacent)
                 }
             }
@@ -179,7 +179,7 @@ class Maze {
             for j in stride(from: 0, to: pixelData!.rows, by: 1) {
                 if pixelIsStartingColor(pixelLoc: (i,j)) {
                     for pixel in getAdjacentPixel(pixelLoc: (i, j)) {
-                        if pixelIsWhite(pixelLoc: pixel) {
+                        if pixelIsPath(pixelLoc: pixel) {
                             start = (i, j)
                             return start!
                         }
@@ -191,31 +191,47 @@ class Maze {
     }
     
     func getAdjacentPixel(pixelLoc: (Int,Int)) -> [(Int,Int)] {
-        return [(pixelLoc.0-1,pixelLoc.1),(pixelLoc.0+1,pixelLoc.1),(pixelLoc.0,pixelLoc.1-1),(pixelLoc.0,pixelLoc.1+1)]
+        var adjacent: [(Int,Int)] = []
+        if pixelLoc.0 >= 0 && pixelLoc.0 < pixelData!.columns - 1 {
+            adjacent.append((pixelLoc.0+1,pixelLoc.1))
+        }
+        if pixelLoc.0 > 0 && pixelLoc.0 <= pixelData!.columns - 1 {
+            adjacent.append((pixelLoc.0-1,pixelLoc.1))
+        }
+        if pixelLoc.1 >= 0 && pixelLoc.1 < pixelData!.rows - 1 {
+            adjacent.append((pixelLoc.0,pixelLoc.1+1))
+        }
+        if pixelLoc.1 > 0 && pixelLoc.1 <= pixelData!.rows - 1 {
+            adjacent.append((pixelLoc.0,pixelLoc.1-1))
+        }
+        return adjacent
     }
     
-    func pixelIsWhite(pixelLoc: (Int,Int)) -> Bool {
-        return pixelData![pixelLoc.0,pixelLoc.1].value == Globals.Pixel.white
+    //Path pixel defined as any color where RGB are all >= 150
+    func pixelIsPath(pixelLoc: (Int,Int)) -> Bool {
+        return pixelData![pixelLoc.0,pixelLoc.1].red >= 150 && pixelData![pixelLoc.0,pixelLoc.1].green >= 150 && pixelData![pixelLoc.0,pixelLoc.1].blue >= 150 && pixelData![pixelLoc.0,pixelLoc.1].alpha == 255
     }
     
-    func pixelIsOffWhite(pixelLoc: (Int,Int)) -> Bool {
-        return pixelData![pixelLoc.0,pixelLoc.1].value == Globals.Pixel.offWhite
+    func pixelWasVisited(pixelLoc: (Int,Int)) -> Bool {
+        return pixelData![pixelLoc.0,pixelLoc.1].alpha == 254
     }
     
+    //Starting color defined as any color where r >= 175, g < 150 and b <= 150
     func pixelIsStartingColor(pixelLoc: (Int,Int)) -> Bool {
-        return (pixelData![pixelLoc.0,pixelLoc.1].red > pixelData![pixelLoc.0,pixelLoc.1].green && pixelData![pixelLoc.0,pixelLoc.1].red > pixelData![pixelLoc.0,pixelLoc.1].blue)
+        return pixelData![pixelLoc.0,pixelLoc.1].red >= 175 && pixelData![pixelLoc.0,pixelLoc.1].green < 150 && pixelData![pixelLoc.0,pixelLoc.1].blue < 150
     }
     
+    //Ending color defined as any color where r < 150, g < 150 and b >= 175
     func pixelIsEndingColor(pixelLoc: (Int,Int)) -> Bool {
-        return (pixelData![pixelLoc.0,pixelLoc.1].blue > pixelData![pixelLoc.0,pixelLoc.1].red && pixelData![pixelLoc.0,pixelLoc.1].blue > pixelData![pixelLoc.0,pixelLoc.1].green)
+        return pixelData![pixelLoc.0,pixelLoc.1].red < 150 && pixelData![pixelLoc.0,pixelLoc.1].green < 150 && pixelData![pixelLoc.0,pixelLoc.1].blue >= 175
     }
     
     func setPixelToGreen(pixelLoc: (Int,Int)) {
         return pixelData![pixelLoc.0,pixelLoc.1].value = Globals.Pixel.green
     }
     
-    func setPixelToOffWhite(pixelLoc: (Int,Int)) {
-        return pixelData![pixelLoc.0,pixelLoc.1].value = Globals.Pixel.offWhite
+    func markPixelAsVisited(pixelLoc: (Int,Int)) {
+        pixelData![pixelLoc.0,pixelLoc.1].alpha = 254
     }
     
     class func descending(_ m1: Maze, _ m2: Maze) -> Bool {

@@ -27,7 +27,6 @@ struct Globals {
             set { value = (value.0,value.1,value.2,newValue) }
         }
         static var white: (UInt8, UInt8, UInt8, UInt8) = (255,255,255,255)
-        static var offWhite: (UInt8, UInt8, UInt8, UInt8)  = (254,254,254,255)
         static var green: (UInt8, UInt8, UInt8, UInt8)  = (0,255,0,255)
     }
 }
