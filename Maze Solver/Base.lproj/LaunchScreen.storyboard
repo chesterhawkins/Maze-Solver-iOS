@@ -21,18 +21,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-zn-t9p">
                                 <rect key="frame" x="67" y="269" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maze Solver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPs-N3-F6s">
-                                <rect key="frame" x="140" y="405" width="94" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GPs-N3-F6s" firstAttribute="centerX" secondItem="dOz-zn-t9p" secondAttribute="centerX" id="ABu-Oz-Bua"/>
                             <constraint firstItem="dOz-zn-t9p" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Uun-k3-mtB"/>
-                            <constraint firstItem="GPs-N3-F6s" firstAttribute="top" secondItem="dOz-zn-t9p" secondAttribute="bottom" constant="8" symbolic="YES" id="dqv-hA-LVg"/>
                             <constraint firstItem="dOz-zn-t9p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="gac-xs-lI8"/>
                             <constraint firstItem="dOz-zn-t9p" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iEp-ky-dF0"/>
                             <constraint firstItem="dOz-zn-t9p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="ltH-ue-xyv"/>
