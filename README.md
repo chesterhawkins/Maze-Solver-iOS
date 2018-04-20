@@ -7,3 +7,6 @@ Simply take a picture of your maze or upload a saved maze from your phone. Follo
 There are also some mazes of different shapes and sizes already included.
 
 Download on the [App Store](https://itunes.apple.com/ai/app/maze-solver-open-source/id1373132378?mt=8).
+
+# How Do I Contribute?
+[Contribution Guidelines](https://github.com/chesterhawkins/Maze-Solver-iOS/blob/master/CONTRIBUTING.md)
