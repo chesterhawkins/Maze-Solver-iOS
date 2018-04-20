@@ -24,9 +24,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-T5-r1D">
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-T5-r1D">
                                     <rect key="frame" x="127" y="8" width="121" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="121" id="4yB-Rl-X7t"/>
+                                    </constraints>
                                     <segments>
                                         <segment title="" image="rectangle"/>
                                         <segment title="" image="circle"/>
@@ -39,6 +41,10 @@
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="GGz-T5-r1D" firstAttribute="centerY" secondItem="BZD-YM-321" secondAttribute="centerY" id="elz-sf-T4b"/>
+                                <constraint firstItem="GGz-T5-r1D" firstAttribute="centerX" secondItem="BZD-YM-321" secondAttribute="centerX" id="y0w-Lf-eX9"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="maze" rowHeight="132" id="V7C-SU-O8T" customClass="MazeCell" customModule="Maze_Solver" customModuleProvider="target">
@@ -130,10 +136,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="v8C-uU-U4e">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Solve All" id="gQm-ks-gDR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="HjR-Uf-do5">
+                            <connections>
+                                <action selector="getMazeImage:" destination="QHP-bq-uwd" id="905-U9-Tl2"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="9JI-jn-akr">
                                 <connections>
-                                    <action selector="solveAllMazes" destination="QHP-bq-uwd" id="FhM-aZ-gIy"/>
+                                    <action selector="fetchAllMazes" destination="QHP-bq-uwd" id="iGy-r7-DOs"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Reset All" id="k1B-xr-nEp">
@@ -141,12 +152,7 @@
                                     <action selector="resetAllMazes" destination="QHP-bq-uwd" id="2rq-nx-W2w"/>
                                 </connections>
                             </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="9JI-jn-akr">
-                            <connections>
-                                <action selector="fetchAllMazes" destination="QHP-bq-uwd" id="iGy-r7-DOs"/>
-                            </connections>
-                        </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mazeTable" destination="FnB-BI-sjF" id="CEb-yI-Y8l"/>
@@ -157,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="1128.8" y="133.5832083958021"/>
         </scene>
-        <!--Solved Maze View Controller-->
+        <!--Maze View Controller-->
         <scene sceneID="2rO-Tf-kCj">
             <objects>
-                <viewController storyboardIdentifier="solvedmaze" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxO-rb-0sD" customClass="SolvedMazeViewController" customModule="Maze_Solver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="solvedmaze" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxO-rb-0sD" customClass="MazeViewController" customModule="Maze_Solver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xdj-5s-dQk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +191,7 @@
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="gvy-qZ-34g" firstAttribute="leading" secondItem="Xdj-5s-dQk" secondAttribute="leading" id="7Sm-Pw-7PR"/>
                             <constraint firstItem="gvy-qZ-34g" firstAttribute="centerX" secondItem="Xdj-5s-dQk" secondAttribute="centerX" id="SF0-aL-FGG"/>

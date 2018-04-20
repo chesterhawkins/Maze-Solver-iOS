@@ -8,18 +8,67 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var mazeViewChanger: UISegmentedControl!
     @IBOutlet weak var mazeTable: UITableView!
     var visibleMazes: [Maze] = []
+    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mazeTable.delegate = self
         mazeTable.dataSource = self
+        picker.delegate = self
+        picker.allowsEditing = false
         NotificationCenter.default.addObserver(self, selector: #selector(loadTable), name: NSNotification.Name(rawValue: Globals.MazeGlobals.mazeUpdateNotif), object: nil)
         Helper.MazeHelper.fetchAllMazes()
+    }
+    
+    @IBAction func getMazeImage(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "", message: "Choose a maze from your photo library or take a new photo.", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let fromLibrary = UIAlertAction(title: "Photo Library", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
+            self.photofromLibrary()
+        })
+        let camera = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
+            self.photoFromCamera()
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (UIAlertAction) -> Void in
+            
+        })
+        alert.addAction(fromLibrary)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func photofromLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.modalPresentationStyle = .popover
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func photoFromCamera() {
+        picker.sourceType = .camera
+        picker.cameraCaptureMode = .photo
+        picker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.auto
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.dismiss(animated: true) {
+                let solvedMaze = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "solvedmaze") as? MazeViewController
+                solvedMaze?.maze = Maze(newMaze: nil, description: nil, url: nil, image: image, shape: nil)
+                solvedMaze?.userUpload = true
+                self.show(solvedMaze!, sender: nil)
+            }
+        }
+        else {
+            self.dismiss(animated: true, completion: {
+
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +97,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func fetchAllMazes() {
         Helper.MazeHelper.fetchAllMazes()
+    }
+    
+    @IBAction func cameraTapped() {
     }
     
     @objc func loadTable() {
@@ -131,7 +183,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let row = visibleMazes.count - (indexPath as NSIndexPath).row - 1;
         let maze = visibleMazes[row]
         
-        let solvedMaze = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "solvedmaze") as? SolvedMazeViewController
+        let solvedMaze = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "solvedmaze") as? MazeViewController
         solvedMaze?.maze = maze
         self.show(solvedMaze!, sender: nil)
     }

@@ -18,7 +18,7 @@
 		A423B11B206F43B9002D9EA4 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B11A206F43B9002D9EA4 /* Array2D.swift */; };
 		A423B11E206F470E002D9EA4 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B11C206F470E002D9EA4 /* LinkedList.swift */; };
 		A423B11F206F470E002D9EA4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B11D206F470E002D9EA4 /* Queue.swift */; };
-		A423B123206F6AED002D9EA4 /* SolvedMazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B122206F6AED002D9EA4 /* SolvedMazeViewController.swift */; };
+		A423B123206F6AED002D9EA4 /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B122206F6AED002D9EA4 /* MazeViewController.swift */; };
 		A459089F2085D34400FABB03 /* happy_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A459089E2085D34300FABB03 /* happy_circle.png */; };
 		A4D1E1C92081AE7C00853BB1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1E1C82081AE7C00853BB1 /* Helper.swift */; };
 		A4D1E1CB2081AEC800853BB1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1E1CA2081AEC800853BB1 /* Globals.swift */; };
@@ -37,7 +37,7 @@
 		A423B11A206F43B9002D9EA4 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		A423B11C206F470E002D9EA4 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		A423B11D206F470E002D9EA4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		A423B122206F6AED002D9EA4 /* SolvedMazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedMazeViewController.swift; sourceTree = "<group>"; };
+		A423B122206F6AED002D9EA4 /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewController.swift; sourceTree = "<group>"; };
 		A459089E2085D34300FABB03 /* happy_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy_circle.png; sourceTree = "<group>"; };
 		A4D1E1C82081AE7C00853BB1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A4D1E1CA2081AEC800853BB1 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A423B105206DF524002D9EA4 /* ViewController.swift */,
-				A423B122206F6AED002D9EA4 /* SolvedMazeViewController.swift */,
+				A423B122206F6AED002D9EA4 /* MazeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			files = (
 				A423B11E206F470E002D9EA4 /* LinkedList.swift in Sources */,
 				A423B11F206F470E002D9EA4 /* Queue.swift in Sources */,
-				A423B123206F6AED002D9EA4 /* SolvedMazeViewController.swift in Sources */,
+				A423B123206F6AED002D9EA4 /* MazeViewController.swift in Sources */,
 				A423B106206DF524002D9EA4 /* ViewController.swift in Sources */,
 				A423B104206DF524002D9EA4 /* AppDelegate.swift in Sources */,
 				A4D1E1C92081AE7C00853BB1 /* Helper.swift in Sources */,
