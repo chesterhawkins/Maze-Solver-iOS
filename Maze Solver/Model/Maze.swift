@@ -27,7 +27,6 @@ extension Helper {
                             (image, error, url, data) in
                             if error == nil && image != nil {
                                 let maze = Maze(newMaze: "Maze \(i+1)", description: description, url: mazeUrl, image: image!, shape: shape)
-                                maze.pixelData = Array2D(columns: Int(maze.image.size.width), rows: Int(maze.image.size.height), values: maze.image.pixelData()!)
                                 Globals.MazeGlobals.allMazes.append(maze)
                                 Globals.MazeGlobals.allMazes.sort(by: Maze.descending)
                                 postMazeUpdate(maze: maze)
@@ -73,13 +72,15 @@ extension Globals {
 }
 
 class Maze {
-    var name: String
-    var description: String
-    var url: String
+    var name: String?
+    var description: String?
+    var url: String?
     var pixelData: Array2D<Globals.Pixel>?
     var image: UIImage
     var status: MazeStatus
-    var shape: MazeShape
+    var shape: MazeShape?
+    var start: (Int,Int)?
+    var end: (Int,Int)?
     
     enum MazeStatus: String {
         case Unsolved
@@ -95,13 +96,14 @@ class Maze {
         case Hexagonal
     }
     
-    public init(newMaze name: String, description: String, url: String, image: UIImage, shape: MazeShape){
+    public init(newMaze name: String?, description: String?, url: String?, image: UIImage, shape: MazeShape?){
         self.name = name
         self.description = description
         self.url = url
         self.status = .Unsolved
-        self.image = image
+        self.image = UIImage(data: UIImageJPEGRepresentation(image.resizedImage(recolor: url != nil ? false: true), 1)!)!
         self.shape = shape
+        self.pixelData = Array2D(columns: Int(self.image.size.width), rows: Int(self.image.size.height), values: self.image.pixelData()!)
     }
     
     func isEqualTo(_ other: Maze) -> Bool
@@ -113,6 +115,14 @@ class Maze {
     func solve(done: @escaping () -> ()){
         guard self.status != .Solving && self.status != .Solved else { return }
         reset()
+        
+        if start != nil {
+            setPixelToStartColor(pixelLoc: start!)
+        }
+        if end != nil {
+            setPixelToEndColor(pixelLoc: end!)
+        }
+        
         self.status = .Solving
         Helper.MazeHelper.postMazeUpdate(maze: self)
         
@@ -207,9 +217,9 @@ class Maze {
         return adjacent
     }
     
-    //Path pixel defined as any color where RGB are all >= 150
+    //Path pixel defined as any color where RGB are all >= 175
     func pixelIsPath(pixelLoc: (Int,Int)) -> Bool {
-        return pixelData![pixelLoc.0,pixelLoc.1].red >= 150 && pixelData![pixelLoc.0,pixelLoc.1].green >= 150 && pixelData![pixelLoc.0,pixelLoc.1].blue >= 150 && pixelData![pixelLoc.0,pixelLoc.1].alpha == 255
+        return pixelData![pixelLoc.0,pixelLoc.1].red >= 175 && pixelData![pixelLoc.0,pixelLoc.1].green >= 175 && pixelData![pixelLoc.0,pixelLoc.1].blue >= 175 && pixelData![pixelLoc.0,pixelLoc.1].alpha == 255
     }
     
     func pixelWasVisited(pixelLoc: (Int,Int)) -> Bool {
@@ -218,16 +228,66 @@ class Maze {
     
     //Starting color defined as any color where r >= 175, g < 150 and b <= 150
     func pixelIsStartingColor(pixelLoc: (Int,Int)) -> Bool {
-        return pixelData![pixelLoc.0,pixelLoc.1].red >= 175 && pixelData![pixelLoc.0,pixelLoc.1].green < 150 && pixelData![pixelLoc.0,pixelLoc.1].blue < 150
+        return pixelData![pixelLoc.0,pixelLoc.1].red >= 175 && pixelData![pixelLoc.0,pixelLoc.1].green < 125 && pixelData![pixelLoc.0,pixelLoc.1].blue < 125
     }
     
     //Ending color defined as any color where r < 150, g < 150 and b >= 175
     func pixelIsEndingColor(pixelLoc: (Int,Int)) -> Bool {
-        return pixelData![pixelLoc.0,pixelLoc.1].red < 150 && pixelData![pixelLoc.0,pixelLoc.1].green < 150 && pixelData![pixelLoc.0,pixelLoc.1].blue >= 175
+        return pixelData![pixelLoc.0,pixelLoc.1].red < 125 && pixelData![pixelLoc.0,pixelLoc.1].green < 125 && pixelData![pixelLoc.0,pixelLoc.1].blue >= 175
     }
     
     func setPixelToGreen(pixelLoc: (Int,Int)) {
-        return pixelData![pixelLoc.0,pixelLoc.1].value = Globals.Pixel.green
+        pixelData![pixelLoc.0,pixelLoc.1].value = Globals.Pixel.green
+    }
+    
+    func setStart(pixelLoc: (Int,Int)) {
+        start = pixelLoc
+        setPixelToStartColor(pixelLoc: start!)
+        Helper.MazeHelper.postMazeUpdate(maze: self)
+    }
+    
+    func setEnd(pixelLoc: (Int,Int)) {
+        end = pixelLoc
+        setPixelToEndColor(pixelLoc: end!)
+        Helper.MazeHelper.postMazeUpdate(maze: self)
+    }
+    
+    func setPixelToStartColor(pixelLoc: (Int,Int)) {
+        pixelData![pixelLoc.0,pixelLoc.1].value = Globals.Pixel.red
+        for pixel in getAdjacentPixel(pixelLoc: pixelLoc) {
+            if pixelIsPath(pixelLoc: pixel) {
+                pixelData![pixel.0,pixel.1].value = Globals.Pixel.red
+                for pixel2 in getAdjacentPixel(pixelLoc: pixel) {
+                    if pixelIsPath(pixelLoc: pixel2) {
+                        pixelData![pixel2.0,pixel2.1].value = Globals.Pixel.red
+                        for pixel3 in getAdjacentPixel(pixelLoc: pixel2) {
+                            if pixelIsPath(pixelLoc: pixel3) {
+                                pixelData![pixel3.0,pixel3.1].value = Globals.Pixel.red
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func setPixelToEndColor(pixelLoc: (Int,Int)) {
+        pixelData![pixelLoc.0,pixelLoc.1].value = Globals.Pixel.blue
+        for pixel in getAdjacentPixel(pixelLoc: pixelLoc) {
+            if pixelIsPath(pixelLoc: pixel) {
+                pixelData![pixel.0,pixel.1].value = Globals.Pixel.blue
+                for pixel2 in getAdjacentPixel(pixelLoc: pixel) {
+                    if pixelIsPath(pixelLoc: pixel2) {
+                        pixelData![pixel2.0,pixel2.1].value = Globals.Pixel.blue
+                        for pixel3 in getAdjacentPixel(pixelLoc: pixel2) {
+                            if pixelIsPath(pixelLoc: pixel3) {
+                                pixelData![pixel3.0,pixel3.1].value = Globals.Pixel.blue
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     func markPixelAsVisited(pixelLoc: (Int,Int)) {
@@ -235,6 +295,6 @@ class Maze {
     }
     
     class func descending(_ m1: Maze, _ m2: Maze) -> Bool {
-        return m1.name.compare(m2.name) == ComparisonResult.orderedDescending
+        return m1.name!.compare(m2.name!) == ComparisonResult.orderedDescending
     }
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Ojee Labs. All rights reserved.
 //
 
+import UIKit
+
 struct Globals {
     //Struct to represent RGBA pixel info
     struct Pixel {
@@ -27,6 +29,11 @@ struct Globals {
             set { value = (value.0,value.1,value.2,newValue) }
         }
         static var white: (UInt8, UInt8, UInt8, UInt8) = (255,255,255,255)
-        static var green: (UInt8, UInt8, UInt8, UInt8)  = (0,255,0,255)
+        static var green: (UInt8, UInt8, UInt8, UInt8)  = (0,200,0,255)
+        static var red: (UInt8, UInt8, UInt8, UInt8)  = (255,0,0,255)
+        static var blue: (UInt8, UInt8, UInt8, UInt8)  = (0,0,255,255)
     }
+    
+    static var MAXIMAGEWIDTH: CGFloat = 1024
+    static var MAXIMAGEWIDTHCAMERA: CGFloat = 768
 }
