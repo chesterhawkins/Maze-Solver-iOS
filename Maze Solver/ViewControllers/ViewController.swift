@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mazeTable.dataSource = self
         picker.delegate = self
         picker.allowsEditing = false
+        picker.modalPresentationStyle = .popover
+        picker.popoverPresentationController?.barButtonItem = navigationController?.navigationBar.topItem?.leftBarButtonItem
         NotificationCenter.default.addObserver(self, selector: #selector(loadTable), name: NSNotification.Name(rawValue: Globals.MazeGlobals.mazeUpdateNotif), object: nil)
         Helper.MazeHelper.fetchAllMazes()
     }
@@ -36,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (UIAlertAction) -> Void in
             
         })
+        alert.popoverPresentationController?.barButtonItem = navigationController?.navigationBar.topItem?.leftBarButtonItems?.first
         alert.addAction(fromLibrary)
         alert.addAction(camera)
         alert.addAction(cancel)
@@ -44,7 +47,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func photofromLibrary() {
         picker.sourceType = .photoLibrary
-        picker.modalPresentationStyle = .popover
         present(picker, animated: true, completion: nil)
     }
     

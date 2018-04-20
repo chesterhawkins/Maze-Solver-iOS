@@ -40,7 +40,7 @@ class MazeViewController: UIViewController, UIScrollViewDelegate {
     
     func promptForStart() {
         self.state = .SetStart
-        let alert2 = UIAlertController(title: "Set Start Position", message: "Tap anywhere in the maze to set the start position", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert2 = UIAlertController(title: "Set Start Position", message: "Tap anywhere in the maze to set the start position", preferredStyle: UIAlertControllerStyle.alert)
         let ok = UIKit.UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
             
         })
@@ -50,7 +50,7 @@ class MazeViewController: UIViewController, UIScrollViewDelegate {
     
     func promptForEnd() {
         self.state = .SetEnd
-        let alert2 = UIAlertController(title: "Set End Position", message: "Tap anywhere in the maze to set the end position", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert2 = UIAlertController(title: "Set End Position", message: "Tap anywhere in the maze to set the end position", preferredStyle: UIAlertControllerStyle.alert)
         let ok = UIKit.UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
             
         })
